@@ -1,4 +1,4 @@
-[![](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)](https://github.com/TamamAssalimi/node-js-crud)
+[![](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png=250x)](https://github.com/TamamAssalimi/node-js-crud)
 # node-js-crud
 node js crud with mysql connection
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/TamamAssalimi/node-js-crud)
