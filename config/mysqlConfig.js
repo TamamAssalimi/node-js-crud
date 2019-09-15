@@ -12,7 +12,7 @@ connection.connect(function(err) {
         return;
     }
     console.log('Mysql Connected...');
-    console.log(connection.threadId);
+    console.log('Mysql connection threadId :'+connection.threadId);
 })
 
 module.exports = {connection};
