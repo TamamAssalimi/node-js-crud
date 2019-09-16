@@ -1,4 +1,4 @@
-const {connection} = require('../../config/mysqlConfig.js');
+const {connection} = require('../../config/mysqlConnection.js');
 
 function getAllProduct(req, res) {
     let sql = "SELECT * FROM product";

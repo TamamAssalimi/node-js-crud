@@ -6,6 +6,8 @@ const app = express();
 
 var {getAllProduct, insertProduct, updateProduct, deleteProduct} = require('./controller/mysql/productController');
 var {getEmployee,insertEmployee} = require('./controller/esb/employeeController');
+var {singleUpload,multipleUpload,uploadImage} = require('./controller/upload/uploadController');
+var {upload}=require('./config/storage')
 
 app.set('views',path.join(__dirname,'views'));
 app.set('view engine', 'hbs');
@@ -42,6 +44,20 @@ app.get('/employee/:employeeId',(req,res) => {
 });
 app.post('/employee/create',bodyParser.json({extended: true}),(req,res) => {
   insertEmployee('http://dummy.restapiexample.com/api/v1/create',req,res);
+});
+
+//=======================employee-integrate esb==================================================
+app.get('/upload',(req,res) => {
+  res.render('upload_view');
+});
+app.post('/uploadFile', upload.single('myFile'), (req, res, next) => {
+  singleUpload(req,res,next);
+});
+app.post('/uploadMultiple', upload.array('myFiles', 12), (req, res, next) => {
+  multipleUpload(req,res,next);
+});
+app.post('/uploadPhoto', upload.single('picture'), (req, res) => {
+  uploadImage(req,res);
 });
 
 //server listening
